@@ -22,3 +22,7 @@ def about(request):
     author = 'Marty M.'
     about = 'A website that creates and saves a list of places to visit'
     return render(request, 'travel_wishlist/about.html', {'author':author, 'about':about})
+
+def places_visited(request):
+    visited = Place.objects.filter(visited=True)
+    return render(request, 'travel_wishlist/visited.html', {'visited':visited})
