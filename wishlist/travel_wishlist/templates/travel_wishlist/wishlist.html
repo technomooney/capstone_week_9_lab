@@ -13,6 +13,10 @@
 
 <div>
     {{ place.name }}
+    <form method="post" action="{% url 'place_was_visited' place.pk %}">
+        {% csrf_token %}
+        <button>Visited</button>
+    </form>
 </div>
 
 {% empty %}
