@@ -8,7 +8,7 @@ from .forms import NewPlaceForm
 def place_list(request):
     if request.method == 'POST':
         form = NewPlaceForm(request.POST) # makes a form from the data in the request
-        place.form.save() # create a model from object from the form
+        place = form.save() # create a model from object from the form
         if form.is_valid(): # validation against DB constraints
             place.save() # actually saved the data to the DB 
             redirect('place_list') # redirects to the home page (by name)
