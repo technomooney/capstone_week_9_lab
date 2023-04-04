@@ -30,7 +30,7 @@ def places_visited(request):
 def place_was_visited(request, place_pk):
     if request.method == 'POST':
         # place = Place.objects.get(pk=place_pk)
-        place = get_object_or_404(Place, pk=place_pk)
+        place = get_object_or_404(Place, pk=place_pk) # super useful shortcut.... i dont have to do the logic with this shortcut. :)
         place.visited = True
         place.save()
 
