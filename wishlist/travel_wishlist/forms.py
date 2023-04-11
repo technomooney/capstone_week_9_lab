@@ -6,3 +6,14 @@ class NewPlaceForm(forms.ModelForm):
     class Meta: # special class name... be sure to use this!
         model = Place
         fields= ('name','visited')
+
+class DateInput(forms.DateInput):
+    input_type='date'
+
+class TripReviewForm(forms.ModelForm):
+    class Meta:
+        model = Place
+        fields = ('notes', 'date_visited', 'photo')
+        widgets = {
+            'date_visited':DateInput()
+        }
